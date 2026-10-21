@@ -47,6 +47,9 @@ button:focus-visible {
 
 .side-menu {
   position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--white);
   width: 320px;
   box-shadow:
     -16px 0 52px 0 rgba(14, 24, 80, 0.2),
@@ -116,10 +119,18 @@ button:focus-visible {
 }
 
 .nav__button {
+  display: inline-block;
   width: 100%;
   text-align: start;
   padding: 16px 24px;
   border-radius: 8px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.nav__button:visited {
+  text-decoration: none;
+  color: var(--text);
 }
 
 .nav__button--current {
@@ -168,8 +179,6 @@ button:focus-visible {
 
 .footer__i18n-button {
   font-weight: 500;
-  size: 16px;
-  line-height: 24px;
 }
 
 .footer__i18n-button--current {
@@ -178,49 +187,49 @@ button:focus-visible {
 
 /* ===== Hover animations ===== */
 
-.nav__button {
+.nav__button,
+.footer__i18n-button,
+.footer__i18n-button--current,
+.side-menu__round-button {
   transition:
-    text-shadow 80ms ease-out,
-    -webkit-text-stroke 80ms ease-out;
+    filter 180ms ease-out,
+    transform 180ms ease-out,
+    -webkit-text-stroke 180ms ease-out;
 }
 
 .nav__button:hover {
-  text-shadow: 0px 4px 4px #00000040;
+  filter: brightness(6);
 }
 
 .nav__button:active {
-  text-shadow: 0px 4px 4px #00000040;
   -webkit-text-stroke: 1px black;
 }
 
-.side-menu__round-button {
-  transition:
-    filter 80ms ease-out,
-    transform 80ms ease-out;
-}
-
 .side-menu__round-button:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.4);
   transform: translateY(-2px);
 }
 
 .side-menu__round-button:active {
-  filter: brightness(1.4);
   transform: translateY(-1px);
 }
 
-.footer__i18n-button {
-  transition:
-    color 80ms ease-out,
-    transform 80ms ease-out;
-}
-
 .footer__i18n-button:hover {
-  color: var(--light);
+  filter: brightness(6);
   transform: translateY(-2px);
 }
 
 .footer__i18n-button:active {
-  color: var(--light);
+  filter: brightness(4);
+  transform: translateY(-1px);
+}
+
+.footer__i18n-button--current:hover {
+  filter: brightness(1.4);
+  transform: translateY(-2px);
+}
+
+.footer__i18n-button--current:active {
+  filter: brightness(1.2);
   transform: translateY(-1px);
 }
