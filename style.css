@@ -99,7 +99,6 @@ button:focus-visible {
 .nav {
   display: flex;
   flex-direction: column;
-  list-style: none;
   padding-left: 0;
   margin: 0;
 }
@@ -116,6 +115,10 @@ button:focus-visible {
   margin: 16px 24px;
 
   color: var(--light);
+}
+
+.nav__list {
+  list-style: none;
 }
 
 .nav__button {
